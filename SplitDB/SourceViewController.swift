@@ -15,6 +15,7 @@ class SourceViewController:  NSViewController {
     @IBOutlet weak var wordSearch: NSTextField!
     @IBOutlet weak var categorySearch: NSTextField!
     @IBOutlet weak var theButton: NSButton!
+    @IBOutlet weak var idSearch: NSTextField!
     
     @IBOutlet weak var resultsLabel: NSTextField!
     
@@ -45,28 +46,37 @@ class SourceViewController:  NSViewController {
             print("ButtonClick: it isnt nil 3")
             let searchTerm = wordSearch.stringValue
             let category = categorySearch.stringValue
+            let idsearch = idSearch.stringValue
+            
             var categoryConnector = " and"
             var sqlSearch = ""
             
-            if searchTerm.isEmpty {
-              sqlSearch = "SELECT * FROM questions"
-              categoryConnector = " where"
+            if !idsearch.isEmpty {
+                sqlSearch = "SELECT * FROM questions WHERE ID = \(idsearch)"
             } else {
-                sqlSearch = "SELECT * FROM questions WHERE question like '%" + searchTerm + "%'"
-            }
             
-            if !category.isEmpty {
-                let catArray = category.components(separatedBy: [","," "])
-                var catArray2: [String] = []
-                for cat in catArray {
-                    if !cat.isEmpty {
-                        let cat2 = "category like '" + cat + "%'"
-                        catArray2.append(cat2)
-                    }
+            
+                if searchTerm.isEmpty {
+                    sqlSearch = "SELECT * FROM questions"
+                    categoryConnector = " where"
+                } else {
+                    sqlSearch = "SELECT * FROM questions WHERE question like '%" + searchTerm + "%'"
                 }
-                let joined = catArray2.joined(separator: " OR ")
+            
+                if !category.isEmpty {
+                    let catArray = category.components(separatedBy: [","," "])
+                    var catArray2: [String] = []
+                    for cat in catArray {
+                        if !cat.isEmpty {
+                            let cat2 = "category like '" + cat + "%'"
+                            catArray2.append(cat2)
+                        }
+                    }
+                    let joined = catArray2.joined(separator: " OR ")
                 
-                sqlSearch = sqlSearch + categoryConnector + " (" + joined + ")"
+                    sqlSearch = sqlSearch + categoryConnector + " (" + joined + ")"
+                }
+                
             }
             
             print("sqlSearch is " + sqlSearch)
@@ -99,6 +109,20 @@ class SourceViewController:  NSViewController {
         
         
     }
+    
+    
+    func tableViewSelectionDidChange(_ notification: Notification)
+    {
+       guard tableView.selectedRow != -1 else { return }
+       guard let splitVC = parent as? NSSplitViewController else
+    { return }
+       if let detail = splitVC.children[1] as? DetailViewController
+    {
+        
+        let theRow = tableView.selectedRow
+        print("theRow is \(theRow)")
+        detail.showQuestion(row: theRow)
+    } }
     
     
     
@@ -161,5 +185,11 @@ extension SourceViewController: NSTableViewDelegate {
     print("not setting cell")
     return nil
   }
+    
+    
+    
+    
+    
+    
 
 }
