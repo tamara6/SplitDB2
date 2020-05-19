@@ -842,7 +842,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CsC-oS-lMM">
-                                <rect key="frame" x="20" y="231" width="43" height="16"/>
+                                <rect key="frame" x="22" y="231" width="43" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Words" id="0g3-9w-dNR">
                                     <font key="font" metaFont="system"/>
@@ -851,7 +851,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pqp-W6-vMU">
-                                <rect key="frame" x="175" y="231" width="70" height="16"/>
+                                <rect key="frame" x="178" y="231" width="70" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Categories" id="Wmb-gs-iIL">
                                     <font key="font" metaFont="system"/>
@@ -910,7 +910,7 @@ DQ
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1nl-Im-LR8">
-                                <rect key="frame" x="271" y="231" width="17" height="16"/>
+                                <rect key="frame" x="274" y="231" width="17" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="ID" id="YmW-ZR-m5e">
                                     <font key="font" metaFont="system"/>
@@ -1049,6 +1049,65 @@ DQ
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fiD-ZG-z9t">
+                                <rect key="frame" x="86" y="74" width="77" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Kkk-x7-nrx" id="Mjc-d9-zCa">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <menu key="menu" id="faC-ca-bx2">
+                                        <items>
+                                            <menuItem id="Kkk-x7-nrx">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                            <menuItem title="A" state="on" id="m7Q-IF-6sK"/>
+                                            <menuItem title="B" id="pWQ-Fa-Pth"/>
+                                            <menuItem title="C" id="jTn-7t-aqB"/>
+                                            <menuItem title="D" id="BoY-F3-uZu">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                            <menuItem title="E" id="og5-fM-BJt">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                            </popUpButton>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G4A-VL-1Mk">
+                                <rect key="frame" x="22" y="80" width="54" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Correct:" id="kUG-Nt-e99">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Ig-tb-OmF">
+                                <rect key="frame" x="22" y="46" width="60" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Category" id="jxw-6K-vJS">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jpi-ds-NHd">
+                                <rect key="frame" x="195" y="79" width="89" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title="Randomize" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="w9h-Au-aw5">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Je8-kA-WR6">
+                                <rect key="frame" x="88" y="41" width="56" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="C0y-BX-C6v">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                     </view>
                     <connections>
@@ -1057,7 +1116,10 @@ DQ
                         <outlet property="ansCView" destination="AeJ-Z4-HtW" id="uwr-XR-Hz3"/>
                         <outlet property="ansDView" destination="p5z-s8-pyK" id="qBs-Aw-KtQ"/>
                         <outlet property="ansEView" destination="2A3-ud-hOk" id="gYM-TD-VSh"/>
+                        <outlet property="categoryView" destination="Je8-kA-WR6" id="1RU-2c-Sbj"/>
+                        <outlet property="popUpAns" destination="fiD-ZG-z9t" id="KY8-b2-Sad"/>
                         <outlet property="questionView" destination="DAB-il-MIJ" id="LAc-EW-g4j"/>
+                        <outlet property="randomizeCheck" destination="Jpi-ds-NHd" id="sD5-Wx-oG8"/>
                     </connections>
                 </viewController>
                 <customObject id="f15-A7-Xjo" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

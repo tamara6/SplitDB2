@@ -15,6 +15,10 @@ class DetailViewController: NSViewController {
     @IBOutlet weak var ansCView: NSTextField!
     @IBOutlet weak var ansDView: NSTextField!
     @IBOutlet weak var ansEView: NSTextField!
+    @IBOutlet weak var popUpAnswer: NSMenu!
+    @IBOutlet weak var popUpAns: NSPopUpButton!
+    @IBOutlet weak var categoryView: NSTextField!
+    @IBOutlet weak var randomizeCheck: NSButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +36,17 @@ class DetailViewController: NSViewController {
         ansCView.stringValue = item["c"]
         ansDView.stringValue = item["d"]
         ansEView.stringValue = item["e"]
+        categoryView.stringValue = item["category"]
+        
+        var answer: String = ""
+        answer = item["correct"]
+        
+        popUpAns.selectItem(withTitle: answer.uppercased())
+        
+        var doRandom: Bool = false
+        
+        
+        
     }
     
 }
