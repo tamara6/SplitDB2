@@ -28,7 +28,7 @@ class DetailViewController: NSViewController {
     func showQuestion(row: Int) {
         
         var text: String = ""
-        let item = dbRows[row]
+        let item = dbQuestions[row]
         text = item["question"]
         questionView.stringValue = text
         ansAView.stringValue = item["a"]

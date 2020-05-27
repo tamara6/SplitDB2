@@ -16,6 +16,8 @@ import GRDB
    //this ! seems to mean that it is an implicitly unwrapped optional
    //Sometimes you’ve created a struct or a class, and some of its properties are nil before initializing the class, but will never be nil after.
 var dbRows: [Row] = []
+var dbQuestions: [Row] = []
+var dbExams: [Row] = []
 
 
 

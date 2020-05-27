@@ -16,6 +16,7 @@
 		3E263BAE246AFCE10059384F /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E263BAD246AFCE10059384F /* AppDatabase.swift */; };
 		3E263BB0246FAB0F0059384F /* SourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E263BAF246FAB0F0059384F /* SourceViewController.swift */; };
 		3E263BB2246FABC80059384F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E263BB1246FABC80059384F /* DetailViewController.swift */; };
+		3E263BB6247B56690059384F /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E263BB4247B51960059384F /* Question.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,7 @@
 		3E263BAD246AFCE10059384F /* AppDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDatabase.swift; sourceTree = "<group>"; };
 		3E263BAF246FAB0F0059384F /* SourceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceViewController.swift; sourceTree = "<group>"; };
 		3E263BB1246FABC80059384F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		3E263BB4247B51960059384F /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 			children = (
 				3E263B7A246AFA730059384F /* AppDelegate.swift */,
 				3E263BAD246AFCE10059384F /* AppDatabase.swift */,
+				3E263BB4247B51960059384F /* Question.swift */,
 				3E263B7C246AFA730059384F /* ViewController.swift */,
 				3E263B7E246AFA740059384F /* Assets.xcassets */,
 				3E263B80246AFA740059384F /* Main.storyboard */,
@@ -320,6 +323,7 @@
 				3E263BAE246AFCE10059384F /* AppDatabase.swift in Sources */,
 				3E263BB0246FAB0F0059384F /* SourceViewController.swift in Sources */,
 				3E263BB2246FABC80059384F /* DetailViewController.swift in Sources */,
+				3E263BB6247B56690059384F /* Question.swift in Sources */,
 				3E263B7D246AFA730059384F /* ViewController.swift in Sources */,
 				3E263B7B246AFA730059384F /* AppDelegate.swift in Sources */,
 			);

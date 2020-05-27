@@ -43,72 +43,42 @@ class SourceViewController:  NSViewController {
     @IBAction func buttonClick(_ sender: Any) {
         
         if dbQueue != nil {
+            
+            var s = ""
             print("ButtonClick: it isnt nil 3")
             let searchTerm = wordSearch.stringValue
             let category = categorySearch.stringValue
             let idsearch = idSearch.stringValue
             
-            var categoryConnector = " and"
-            var sqlSearch = ""
-            
             if !idsearch.isEmpty {
-                sqlSearch = "SELECT * FROM questions WHERE ID = \(idsearch)"
-            } else {
-            
-            
-                if searchTerm.isEmpty {
-                    sqlSearch = "SELECT * FROM questions"
-                    categoryConnector = " where"
-                } else {
-                    sqlSearch = "SELECT * FROM questions WHERE question like '%" + searchTerm + "%'"
-                }
-            
-                if !category.isEmpty {
-                    let catArray = category.components(separatedBy: [","," "])
-                    var catArray2: [String] = []
-                    for cat in catArray {
-                        if !cat.isEmpty {
-                            let cat2 = "category like '" + cat + "%'"
-                            catArray2.append(cat2)
-                        }
-                    }
-                    let joined = catArray2.joined(separator: " OR ")
-                
-                    sqlSearch = sqlSearch + categoryConnector + " (" + joined + ")"
-                }
-                
+                //set the other two fields to blank if only searching for an ID
+                categorySearch.stringValue = ""
+                wordSearch.stringValue = ""
             }
             
-            print("sqlSearch is " + sqlSearch)
-            do {
-                   let rows = try dbQueue.read { db in
-                    try Row.fetchAll(db,
-                    sql: sqlSearch
-                    )
-                }
-                dbRows = rows
+            // send things off to do the searching....
+            s = Question.qsearch(wordsearch: searchTerm, catsearch: category, idsearch: idsearch)
+            
+            //print("the return from Question is " + s)
+            
+            //display the results of the search
+            resultsLabel.stringValue = "\(dbQuestions.count) records found"
                 
-                resultsLabel.stringValue = "\(dbRows.count) records found"
-                
-                print("size of rows is : \(rows.count)")
-                for row in rows {
-                let question: String = row["question"]
-                    print(question)
-                }
-                
-                tableView.reloadData()
-                 
-            } catch {
-                print("caught - no playerCount")
-                
+            /*
+            for row in dbQuestions {
+            let question: String = row["question"]
+                print(question)
             }
+            */
+                
+            tableView.reloadData()
+            
         } else {
+            //the database is nil
             print("ButtonClick: it is nil 3")
         }
         
-        
-        
-    }
+    } //end button click
     
     
     func tableViewSelectionDidChange(_ notification: Notification)
@@ -135,8 +105,8 @@ extension SourceViewController: NSTableViewDataSource {
     // returns the number of rows in the db search results
     
     if dbQueue != nil {
-        print("number of rows is : \(dbRows.count)")
-        return dbRows.count
+        print("number of rows is : \(dbQuestions.count)")
+        return dbQuestions.count
          
     } else {
         print("rows in tableview: it is nil 5")
@@ -160,7 +130,7 @@ extension SourceViewController: NSTableViewDelegate {
     var cellIdentifier = NSUserInterfaceItemIdentifier("")
     
     
-   let item = dbRows[row] //this gets the row from the database search result
+   let item = dbQuestions[row] //this gets the row from the database search result
     
    //depending on the column, get the info from the dbRow from above
     
