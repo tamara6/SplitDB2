@@ -6,6 +6,8 @@
 //  Copyright © 2020 Tamara Snyder. All rights reserved.
 //  this is a nonsense change
 //  another meaningless change
+//  Here is a good website to check out, about the GRDB
+//  https://medium.com/@gwendal.roue/grdb-stories-993b9d016867
 //
 
 import Cocoa
@@ -14,7 +16,7 @@ import GRDB
 
 
 // The shared database queue
-   var dbQueue: DatabaseQueue!
+var dbQueue: DatabaseQueue!
    //this ! seems to mean that it is an implicitly unwrapped optional
    //Sometimes you’ve created a struct or a class, and some of its properties are nil before initializing the class, but will never be nil after.
 var dbRows: [Row] = []

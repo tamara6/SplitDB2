@@ -17,6 +17,7 @@
 		3E263BB6247B56690059384F /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E263BB4247B51960059384F /* Question.swift */; };
 		3E5241922774094400F5A537 /* GRDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E52417F277406A700F5A537 /* GRDB.framework */; };
 		3E5241932774094400F5A537 /* GRDB.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3E52417F277406A700F5A537 /* GRDB.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3E52419627763EE700F5A537 /* What to do next.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 3E52419527763EE700F5A537 /* What to do next.rtf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,7 @@
 		3E263BB4247B51960059384F /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		3E524173277406A700F5A537 /* GRDB.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GRDB.xcodeproj; path = "../../GRDB.swift-master/GRDB.xcodeproj"; sourceTree = "<group>"; };
 		3E5241942774110B00F5A537 /* SplitDBDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SplitDBDebug.entitlements; sourceTree = "<group>"; };
+		3E52419527763EE700F5A537 /* What to do next.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = "What to do next.rtf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 				3E263BAD246AFCE10059384F /* AppDatabase.swift */,
 				3E263BB4247B51960059384F /* Question.swift */,
 				3E263B7C246AFA730059384F /* ViewController.swift */,
+				3E52419527763EE700F5A537 /* What to do next.rtf */,
 				3E263B7E246AFA740059384F /* Assets.xcassets */,
 				3E263B80246AFA740059384F /* Main.storyboard */,
 				3E263BAF246FAB0F0059384F /* SourceViewController.swift */,
@@ -310,6 +313,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E52419627763EE700F5A537 /* What to do next.rtf in Resources */,
 				3E263B7F246AFA740059384F /* Assets.xcassets in Resources */,
 				3E263B82246AFA740059384F /* Main.storyboard in Resources */,
 			);
