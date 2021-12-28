@@ -4,8 +4,7 @@
 //
 //  Created by Tamara Snyder on 5/12/20.
 //  Copyright © 2020 Tamara Snyder. All rights reserved.
-//  this is a nonsense change
-//  another meaningless change
+//  
 //  Here is a good website to check out, about the GRDB
 //  https://medium.com/@gwendal.roue/grdb-stories-993b9d016867
 //
@@ -22,6 +21,7 @@ var dbQueue: DatabaseQueue!
 var dbRows: [Row] = []
 var dbQuestions: [Row] = []
 var dbExams: [Row] = []
+var testsWindowOpen: Bool = false
 
 
 

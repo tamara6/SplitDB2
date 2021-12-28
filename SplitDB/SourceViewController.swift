@@ -12,7 +12,7 @@ import GRDB
 
 class SourceViewController:  NSViewController {
   
-   @IBOutlet weak var tableView: NSTableView!
+    @IBOutlet weak var tableView: NSTableView!
     @IBOutlet weak var wordSearch: NSTextField!
     @IBOutlet weak var categorySearch: NSTextField!
     @IBOutlet weak var theButton: NSButton!
@@ -29,17 +29,33 @@ class SourceViewController:  NSViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-        
-        
-        
-        
+         
     }
+    
     
     override var representedObject: Any? {
         didSet {
         // Update the view, if already loaded.
         }
     }
+    
+    @IBAction func openTestWindowButton(_ sender: Any) {
+     print("clicked the button to open the test window")
+     
+        
+        let storyboardName = NSStoryboard.Name(stringLiteral: "Main")
+            let storyboard = NSStoryboard(name: storyboardName, bundle: nil)
+         
+            let storyboardID = NSStoryboard.SceneIdentifier(stringLiteral: "allTestsDisplayStoryboardID")
+         
+            if let testsDisplayWindowController = storyboard.instantiateController(withIdentifier: storyboardID) as? NSWindowController {
+         
+                testsDisplayWindowController.showWindow(nil)
+                testsWindowOpen = true
+            } //end let...
+        
+    } //end openTestWindowButton
+    
     
     @IBAction func buttonClick(_ sender: Any) {
         

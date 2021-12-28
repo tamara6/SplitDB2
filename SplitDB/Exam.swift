@@ -1,14 +1,45 @@
 //
-//  Question.swift
+//  Exam.swift
 //  SplitDB
 //
-//  Created by Tamara Snyder on 5/24/20.
-//  Copyright © 2020 Tamara Snyder. All rights reserved.
+//  Created by Tamara Snyder on 12/24/21.
+//  Copyright © 2021 Tamara Snyder. All rights reserved.
+//
+//  I copied this from Question and then modified it
 //
 
 import GRDB
 
-struct Question {
+struct Exam {
+    
+    
+// first, return an array with all of the tests
+    static func alltests() -> String {
+                
+                // now actually do the search
+                
+                print("Searching for all tests ")
+                do {
+                       let rows = try dbQueue.read { db in
+                        try Row.fetchAll(db,
+                        sql: "SELECT * FROM exams"
+                        )
+                    }
+                    dbExams = rows
+                    
+                     
+                } catch {
+                    print("caught - problem with all test search")
+                    
+                }
+            
+          
+        return "all"
+        
+    } //end alltests
+    
+    
+/*
     
     static func searchString(wordsearch: String, catsearch: String, idsearch: String) -> String {
         // this should return the search string for searching for a set of questions
@@ -44,10 +75,7 @@ struct Question {
             
                 sqlSearch = sqlSearch + categoryConnector + " (" + joined + ")"
             }
-            return sqlSearch
-        
-        
-        
+            return sqlSearch 
         
         
     } //end searchString
@@ -58,45 +86,6 @@ struct Question {
         let category = catsearch
         let idsearch = idsearch
         
-        
-        
-        //if it is a searchTerm and/or a category, then do that and send back results.
-                
-                
-        /*
-                var categoryConnector = " and"
-                var sqlSearch = ""
-                
-                if !idsearch.isEmpty {
-                    sqlSearch = "SELECT * FROM questions WHERE ID = \(idsearch)"
-                } else {
-                
-                
-                    if searchTerm.isEmpty {
-                        sqlSearch = "SELECT * FROM questions"
-                        categoryConnector = " where"
-                    } else {
-                        sqlSearch = "SELECT * FROM questions WHERE question like '%" + searchTerm + "%'"
-                    }
-                
-                    if !category.isEmpty {
-                        let catArray = category.components(separatedBy: [","," "])
-                        var catArray2: [String] = []
-                        for cat in catArray {
-                            if !cat.isEmpty {
-                                let cat2 = "category like '" + cat + "%'"
-                                catArray2.append(cat2)
-                            }
-                        }
-                        let joined = catArray2.joined(separator: " OR ")
-                    
-                        sqlSearch = sqlSearch + categoryConnector + " (" + joined + ")"
-                    }
-                    
-                }
-             */
-        
-             
                 // now actually do the search
                 
                 var sqlSearch = searchString(wordsearch: searchTerm, catsearch: category, idsearch: idsearch)
@@ -109,20 +98,8 @@ struct Question {
                         sql: sqlSearch
                         )
                     }
-                    
                     dbQuestions = rows
                     
-                    /*
-                    resultsLabel.stringValue = "\(dbRows.count) records found"
-                    
-                    print("size of rows is : \(rows.count)")
-                    for row in rows {
-                    let question: String = row["question"]
-                        print(question)
-                    }
-                    
-                    tableView.reloadData()
-                    */
                      
                 } catch {
                     print("caught - problem with question search")
@@ -130,10 +107,9 @@ struct Question {
                 }
             
           
-            
         return sqlSearch
         
     } //end qsearch
-    
+*/
     
 } //end struct
